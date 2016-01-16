@@ -278,7 +278,7 @@ var title = NewLabels[i][0];
           text: NewLabels[i][0],
           position: new google.maps.LatLng(NewLabels[i][1], NewLabels[i][2]),
           map: map,
-          fontSize: 20,
+          fontSize: 14,
           align: 'right'
         });
 
