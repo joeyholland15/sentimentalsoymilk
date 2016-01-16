@@ -4,7 +4,7 @@ var bcrypt = require('bcrypt-nodejs');
 var database = process.env.DATABASE || 'soymilk'
 var dbUser = process.env.DBUSER || 'user'
 var dbPass = process.env.DBPASS || 'user'
-var dbHost = process.env.DATABASE_URL,
+var dbHost = process.env.DBHOST
     
     passportLocalSequelize = require('passport-local-sequelize');
 
