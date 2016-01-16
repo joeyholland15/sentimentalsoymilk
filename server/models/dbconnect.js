@@ -1,10 +1,10 @@
 var Sequelize = require('sequelize');
 var bcrypt = require('bcrypt-nodejs');
-var databaseURL = 'mysql://b1a1841c5ab4c1:f9dd02f1@us-cdbr-iron-east-03.cleardb.net/heroku_e63780ba5c54845?reconnect=true';
+
 var database = process.env.DATABASE || 'soymilk'
 var dbUser = process.env.DBUSER || 'user'
 var dbPass = process.env.DBPASS || 'user'
-var dbHost = databaseURL;
+var dbHost = process.env.DBHOST,
     
     passportLocalSequelize = require('passport-local-sequelize');
 
