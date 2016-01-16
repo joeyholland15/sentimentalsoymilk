@@ -40,7 +40,7 @@ li.itineraies-li {
 li.foursquare-li {
   position: relative;
   list-style: none;
-  border: 1px solid black;
+  border: 1px solid gre;
   transition: background-color 1s ease;
   transition: color 0.6s ease;
 }

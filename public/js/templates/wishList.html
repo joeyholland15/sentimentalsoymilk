@@ -27,7 +27,7 @@
 <!-- Content -->
   <h1 class="page-title">Your Wishlist</h1>
   <input type="text" ng-model="filter.destination" id="landing-filter" placeholder="Search By City">
-  <div class="myTrips" style="background-color: white">
+  <div class="myTrips" style="background-color: transparent">
     <span class="playlist" ng-repeat="trip in tripResults | filter:filter" ng-click="viewTrip(tripResults.indexOf(trip))">
       <div class="playlist-img">
         <img class="trip-img" src="{{trip.image}}" alt="image of {{trip.name}}, {{trip.destination[0]}}">
