@@ -1,69 +1,30 @@
 <!-- Navigation -->
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/#landing">TripAdo</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <!-- <md-button href="/#create" class="text-center" style="display:inline-block">Make a Playlist</md-button> -->
-        <md-button href="/#myTrips"class="text-center nav navbar-nav" style="display:inline-block">My Trips</md-button>
-        <md-button href="/#create" class="text-center nav navbar-nav" style="display:inline-block">Make a Playlist</md-button>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<!-- nav -->
-<div ng-controller="LandingController">
-<md-button href="/#create" class="text-center" style="display:inline-block">Make a Playlist</md-button> 
-
-
-                <div class="carousel-demo">
-                    <ul rn-carousel rn-carousel-index="carouselIndex3" rn-carousel-transition="hexagon" rn-carousel-buffered class="carousel3">
-                        <li ng-repeat="slide in slides3 ">
-                            <div ng-style="{'background-image': 'url(' + slide + ')'}"  class="bgimage">
-                            </div>
-                        </li>
-                    </ul>
-                </div><br><br>
+<div ng-controller="LandingController">                
 <!-- <button href="/#create" class="text-center" style="display: block">Make a Playlist</button> -->
 
 <!-- <h1 class="page-title">Popular Playlists:</h1> -->
 
+<div class="wrapper" style="float: left">
 <md-input-container>
   <input type="text" ng-model="filter.area" id="landing-filter" placeholder="Search By City">
-</md-input-container>
+</md-input-container><br>
 <!-- dropdown test -->
 
-  <md-input-container width="4">
-    <label>How Much Time do you have?</label>
+<md-input-container width="2" style="float: left;">
+    <label>Time Required?</label>
     <md-select ng-model="time">
     <!-- <md-menu-content width="4"> -->
     <!-- creating a button for each select item and passing the selected value to the searchTime function -->
     <md-button ng-click="searchTime(time)" ng-value = "time" ng-repeat="time in timeOptions">{{ time }}</md-button>
     <!-- </md-menu-cntent> -->
     </md-select>
-  </md-input-container>
-
-
+</md-input-container>
+</div>
 
 <!-- dropdown test -->
+<h2 style="text-align: center; margin-right: 15%">Latest Playlists</h2>
+<div class="myTrips" style="background-color: transparent; float: left; display: inline-block; margin-left: 5%">
 
-
-<div class="myTrips" style="background-color: transparent">
   <span class="playlist" ng-repeat="trip in tripResults | filter:filter" ng-click="viewTrip(tripResults.indexOf(trip))" >
     <div class="playlist-img">
       <img class="trip-img" src="{{trip.image}}" alt="image of {{trip.name}}, {{trip.destination[0]}}">
@@ -79,8 +40,20 @@
       <p class="trip-destination">{{trip.area}}</p>
     </div>
   </span>
+
 </div>
+
+<div class="carousel-demo">
+                    <ul rn-carousel rn-carousel-index="carouselIndex3" rn-carousel-transition="slide" rn-carousel-buffered class="carousel3" rn-carousel-auto-slide>
+                        <li ng-repeat="slide in slides3 ">
+                            <div ng-style="{'background-image': 'url(' + slide + ')'}"  class="bgimage">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 </div>
+
+
 
 
 <!-- this will filter the returned maybe filter by rating
@@ -108,45 +81,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-//     <script>
-//         angular.module('DemoApp', [
-//             'angular-carousel'
-//         ]).controller('DemoCtrl', function($scope, $http) {
-// /////////////  twitter API call
-//           var request = function(callback){
-//             var url = 'https://api.instagram.com/v1/media/search?lat=36.114647&lng=-115.172813&access_token=16384709.6ac06b4.49b97800d7fd4ac799a2c889f50f2587&callback=JSON_CALLBACK';
-//             $http.jsonp(url).success(function(data){
-//               callback(data);
-//             }).error(function(data){
-//               console.log("failure: ",arguments);
-//             });
-
-//           }
-
-//           request(function(data){
-
-//             // console.log(data.data);
-//             data = data.data
-//             for(i = 0; i < data.length; i++){
-//               $scope.slides3.push(data[i].images.standard_resolution.url);
-//             }
-//             console.log($scope.slides3);
-//           });
-// ////////////
-//             $scope.colors = ["#fc0003", "#f70008", "#f2000d", "#ed0012", "#e80017", "#e3001c", "#de0021", "#d90026", "#d4002b", "#cf0030", "#c90036", "#c4003b", "#bf0040", "#ba0045", "#b5004a", "#b0004f", "#ab0054", "#a60059", "#a1005e", "#9c0063", "#960069", "#91006e", "#8c0073", "#870078", "#82007d", "#7d0082", "#780087", "#73008c", "#6e0091", "#690096", "#63009c", "#5e00a1", "#5900a6", "#5400ab", "#4f00b0", "#4a00b5", "#4500ba", "#4000bf", "#3b00c4", "#3600c9", "#3000cf", "#2b00d4", "#2600d9", "#2100de", "#1c00e3", "#1700e8", "#1200ed", "#0d00f2", "#0800f7", "#0300fc"];
-
-//             $scope.slides3 = [];
-
-//         })
-
-
-//     </script>

@@ -104,7 +104,7 @@ var filteredResults = [];
     if (coordinates && coordinates.geo){
     var lat = coordinates.geo.ll[0];
     var lng = coordinates.geo.ll[1];}
-    if (!lat){lat=36.114647; lng=-115.172813;};
+    if (!lat){lat=37.773972; lng=-122.431297;};
     var url = 'https://api.instagram.com/v1/media/search?lat='+lat+'&lng='+lng+'&access_token=16384709.6ac06b4.49b97800d7fd4ac799a2c889f50f2587&callback=JSON_CALLBACK';
     $http.jsonp(url).success(function(data){
       callback(data);
