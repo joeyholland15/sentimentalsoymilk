@@ -129,10 +129,10 @@ img.trip-img {
   text-align: center;
 }
 div.myTrips {
-  width: 683px;
-  height: 75vh;
+  width: 70%;
+  height: 50vh;
   overflow: auto;
-  margin: 0 auto;
+  margin: 0, 10px, 0, 10px;
   border: 1px solid black;
 }
 div.playlist-img {
@@ -276,3 +276,10 @@ body, html {
 .alignRight {
    float:right;
 
+}
+
+.sendItin {
+  border-style: solid;
+  text-align: center
+
+}

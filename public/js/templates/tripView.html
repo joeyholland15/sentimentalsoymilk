@@ -1,37 +1,7 @@
-<!-- Navigation -->
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/#landing">Soy Milk</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="/#create">Create A Trip</a></li>
-        <li><a href="/#myTrips">My Trips</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/logout">Logout</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
 <!-- Content -->
 <div position="absolute" style="width: 1000px">
 
-<div id="map" style="width: 400px; height: 400px; float: left" position='relative'></div>
-
- <div class='alignRight' position='relative'>
+ <div position='relative'>
 <div class="page-title">
   <h2 class="page-title">{{name}}</h2>
 
@@ -56,7 +26,7 @@
     </span>
   </div>
   <md-button ng-click ="" class="btn btn-success">Add to Wishlist</md-button>
-
+</div>
 <!--<script>
    angular.module('valueExample', [])
      .controller('ExampleController', ['$scope', function($scope) {
@@ -81,7 +51,7 @@
 
 
 
-<div class="tripview-container">
+<div class="tripview-container" style="float: left;">
   <!-- <form class="form-horizontal" ng-submit="submitRating()">
     <div class="form-group">
       <label for="rating" class="col-sm-2 control-label">Rate this Playlist</label>
@@ -111,9 +81,16 @@
           </div>
       </div>
     </li>
-  </ul>
-    <input type="text" ng-model="number" placeholder="Phone Number">Enter Phone Number</input>
-  <button ng-click="sendItin(number)">Send Itin to Phone</button>
+  </ul>    
+
+<div class="rating-container sendItin">
+    <input type="text" ng-model="number" placeholder="Phone Number"></input><br>
+  <button ng-click="sendItin(number)">Send Playlist to Phone</button>
 </div>
-</div> <!-- end of align div -->
+    
+</div>
+  <div id="map" style="width: 400px; height: 400px; float: right" position='relative'></div>
+
+
+</div>
 </div>
